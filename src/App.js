@@ -1,24 +1,40 @@
-import logo from './logo.svg';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import Home from "./Home/Home";
+import CityPage from './CityPage/CityPage';
+import WeatherPage from './WeatherPage/WeatherPage'; 
+import Routeur from './Routeur/Routeur';
+
+import { useState } from 'react';
+import Container from 'react-bootstrap/Container';
 
 function App() {
+  const [apiNameCity, setApiNameCity] = useState("");
+  const [apiListCities, setApiListCities] = useState([]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Container className="mainDiv">
+        <Routeur path="/" >
+          <Home />
+        </Routeur>
+        <Routeur path="/site/cityData" >
+          <CityPage setApiNameCity={setApiNameCity} 
+                      apiNameCity={apiNameCity}
+                      setApiListCities={setApiListCities}
+                      apiListCities={apiListCities} 
+          />
+        </Routeur>
+        <Routeur path="/site/cityWeather" >
+          <WeatherPage  setApiNameCity={setApiNameCity} 
+                        apiNameCity={apiNameCity} 
+                        setApiListCities={setApiListCities}
+                        apiListCities={apiListCities}
+          />
+        </Routeur>
+      </Container>
+    </>
   );
 }
 

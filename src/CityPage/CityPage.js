@@ -43,7 +43,10 @@ export default function CityPage ({setApiNameCity, apiNameCity, apiListCities, s
         <>
             <Row className="justify-content-md-center">
                 <Col xs={6}>
-                    <Link href="/site/cityWeather" className="mb-3 ml-3">
+                    <Link href="/" className="mb-3 ml-3">
+                        page d'accueil
+                    </Link>
+                    <Link href="/site/cityWeather" className="mb-3 mr-3 float-right">
                         météo aujourd'hui
                     </Link>
                     <Col>

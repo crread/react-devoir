@@ -32,7 +32,10 @@ export default function WeatherPage ({setApiNameCity, apiNameCity, apiListCities
       <>
         <Row className="justify-content-md-center">
           <Col xs={6}>
-            <Link href="/site/cityData" className="mb-3 ml-3">
+            <Link href="/" className="mb-3 ml-3">
+                        page d'accueil
+            </Link>
+            <Link href="/site/cityData" className="mb-3 mr-3 float-right">
               Info sur une ville de France.
             </Link>
             <Col>
